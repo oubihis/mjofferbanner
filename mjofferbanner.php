@@ -148,7 +148,7 @@ class Mjofferbanner extends Module
     {
             $file_name = uniqid().'.png'.pathinfo($_FILES['img_path']['tmp_name'], PATHINFO_EXTENSION);
             if (move_uploaded_file($_FILES['img_path']['tmp_name'], dirname(__FILE__).'/views/img/'.$file_name)) {
-                return '<img src="'.$this->_path."views/img/".$file_name.'" style="width: 380px; height: 100%; border-radius: 3px;">';
+                return $this->_path.'views/img/'.$file_name;
             }
     }
     
